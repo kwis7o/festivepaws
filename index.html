@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festive Paws on Solana</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: url('wallpaper1.webp') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Moving Marquee */
+        .marquee {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffcc00;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+        }
+        .marquee span {
+            display: inline-block;
+            animation: moveText 10s linear infinite;
+        }
+        @keyframes moveText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+        .text-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            max-width: 600px;
+            margin: auto;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .text-box h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .text-box p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            padding: 15px 30px;
+            background: #ff7f50;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .cta-btn:hover {
+            background: #e5673b;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Festive Paws on Solana</h1>
+    </header>
+
+    <div class="marquee">
+        <span>Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws - Festive Paws</span>
+    </div>
+
+    <main class="content">
+        <div class="text-box">
+            <h2>Welcome to Festive Paws</h2>
+            <p>Join us in spreading joy with our Solana coin that supports animal charities worldwide. 🌍❤️</p>
+            <p>Let’s make a difference, one paw at a time! 🐶🐱</p>
+            <!-- Button to copy contract address -->
+            <button class="cta-btn" id="copyBtn">Copy CA</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>FESTIVE PAWS IS A MEMECOIN WITH NO INTRINSIC VALUE. DON’T RISK MONEY YOU ARE AFRAID OF LOSING.</p>
+		<p>THE PRICE MAY GO UP OR IT MAY GO DOWN. WE ARE NOT RESPONSIBLE FOR THE PRICE OF THE TOKEN.</p>
+    </footer>
+
+    <script>
+        // The contract address
+        const contractAddress = "0xYourContractAddressHere"; // Replace with the actual contract address
+
+        // Get the "Copy CA" button
+        const copyBtn = document.getElementById("copyBtn");
+
+        // When the button is clicked, copy the contract address to clipboard
+        copyBtn.addEventListener("click", function() {
+            // Create a temporary input element to hold the contract address
+            const tempInput = document.createElement("input");
+            document.body.appendChild(tempInput);
+            tempInput.value = contractAddress;
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Alert the user that the contract address has been copied
+            alert("Contract Address copied to clipboard!");
+        });
+    </script>
+</body>
+</html>
